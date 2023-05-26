@@ -1,38 +1,36 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import ItemCard from './ItemCard'
-
-
-
-
+import ItemCard from './ItemCard';
 
 const CollectionCards = () => {
-    const [products, setProducts] = useState([])
+  const [products, setProducts] = useState([]);
+  
 
-    useEffect(()=>{
-        axios
-        .get("https://dummyjson.com/products")
-        .then((success)=>{
-            setProducts(success.data.products)
+  useEffect(() => {
+    axios
+      .get('https://dummyjson.com/products')
+      .then((success) => {
+        setProducts(success.data.products);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
 
-        })
-        .catch((error)=>{
-            console.log(error)
-        })
-    },[])
+  
 
-    console.log("Total products", products)
+  return (
+    <div className='grid grid-cols-5 gap-4 mt-10 '>
+      {products.map((product) => (
+        <ItemCard
+          key={product.id}
+          image={product.thumbnail}
+          title={product.title}
+          description={product.description}
+        />
+      ))}
+    </div>
+  );
+};
 
-
-    return (
-        <div className='columns-3'>
-            {products.map((products)=>{
-                return(
-                    <ItemCard image={products.thumbnail} title={products.title} description={products.description}/>
-                )
-            })}
-        </div>
-    )
-}
-
-export default CollectionCards
+export default CollectionCards;
