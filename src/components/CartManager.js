@@ -3,11 +3,12 @@ import AppContext from '../context/AppContext';
 import Cart from './Cart';
 
 const CartManager = () => {
-  const { clickedProduct, setClickedProduct } = useContext(AppContext);
+  const { clickedProduct, setClickedProduct, empty } = useContext(AppContext);
 
   return (
     <div className='mt-10'>
       
+      {empty=== true? (<h1 className='text-center'>Please add Items to the cart to display</h1>):""}
       {clickedProduct === false
         ? console.log("True")
         : clickedProduct.map((product) => (

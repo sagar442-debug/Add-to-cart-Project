@@ -4,17 +4,17 @@ import Card from 'react-bootstrap/Card';
 import AppContext from '../context/AppContext';
 
 function ItemCard(props) {
-  const {clickedProduct, setClickedProduct, totalItems, setTotalItems, cartIndex, setCartIndex} = useContext(AppContext);
+  const { setClickedProduct, totalItems, setTotalItems, setCartIndex, setEmpty} = useContext(AppContext);
 
   const handleCart=()=>{
     setClickedProduct(prevArray => [...prevArray,props])
     setCartIndex("none")
-    setTotalItems(totalItems+1)
+    setTotalItems(totalItems + 1)
   }
 
 
   return (
-    <Card  className=' w-80 p-10'>
+    <Card  className=' w-80 p-10 '>
       <Card.Img variant="top" className='h-36 w-40' src={props.image} />
       <Card.Body>
         <Card.Title>{props.title > 10 ? props.title.slice(0,10):props.title}</Card.Title>

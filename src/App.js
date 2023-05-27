@@ -12,6 +12,7 @@ function App() {
   const [clickedProduct, setClickedProduct] = useState([]);
   const [totalItems, setTotalItems] = useState(0);
   const [cartIndex, setCartIndex] = useState("invisible")
+  const [empty, setEmpty] = useState(true)
 
 
   const contextValue = {
@@ -20,7 +21,9 @@ function App() {
     totalItems,
     setTotalItems,
     cartIndex,
-    setCartIndex
+    setCartIndex,
+    empty, 
+    setEmpty
   }
   return (
 
