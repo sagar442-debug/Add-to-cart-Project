@@ -7,8 +7,9 @@ const CartManager = () => {
 
   return (
     <div className='mt-10'>
-      {clickedProduct === null
-        ? ''
+      
+      {clickedProduct === false
+        ? console.log("True")
         : clickedProduct.map((product) => (
             <Cart key={product.id} product={product} />
           ))}

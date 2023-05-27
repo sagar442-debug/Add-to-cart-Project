@@ -1,14 +1,16 @@
 import { Link } from 'react-router-dom';
-
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser } from '@fortawesome/free-solid-svg-icons'
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import AppContext from '../context/AppContext';
 
 
 function Header() {
-    const [cartIndex, setCartIndex] = useState("hidden")
+    
+    const {totalItems, setTotalItems, cartIndex} = useContext(AppContext)
+    
+    
     
     return (
         <>
@@ -21,8 +23,8 @@ function Header() {
                 <div className=' space-x-5 flex items-center'>
                     <Link to="/user"><FontAwesomeIcon icon={faUser} className='text-white' /></Link>
 
-                    <div className={`bg-red-600 h-4 w-4 rounded-full relative left-6 top-2 text-white ${cartIndex}`} >
-                        <h1 className='text-xs font-semibold'>1</h1>
+                    <div className={`bg-red-600 h-4 w-5 rounded-full flex justify-center relative left-6 top-2 text-white ${cartIndex}`} >
+                        <h1 className='text-xs font-semibold'>{totalItems}</h1>
                     </div>
 
                     <Link className='flex' to="/cart">

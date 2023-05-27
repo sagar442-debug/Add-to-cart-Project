@@ -10,16 +10,24 @@ import { useState } from 'react';
 import CartManager from './components/CartManager';
 function App() {
   const [clickedProduct, setClickedProduct] = useState([]);
+  const [totalItems, setTotalItems] = useState(0);
+  const [cartIndex, setCartIndex] = useState("invisible")
+
+
   const contextValue = {
     clickedProduct,
-    setClickedProduct
+    setClickedProduct,
+    totalItems,
+    setTotalItems,
+    cartIndex,
+    setCartIndex
   }
   return (
 
     <BrowserRouter>
-      <Header />
 
       <AppContext.Provider value={contextValue} >
+      <Header />
         <Routes>
           <Route path="/" element={<CollectionCards />} />
           <Route path="/about" element={<About />} />
