@@ -3,7 +3,7 @@ import AppContext from '../context/AppContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash } from '@fortawesome/free-solid-svg-icons'
 
-const Cart = ({ product, setCartItem }) => {
+const Cart = ({ product, setCartItem}) => {
 
     const [value, setValue] = useState(1)
     const {totalItems, setTotalItems,setCartIndex} = useContext(AppContext)
@@ -19,6 +19,7 @@ const Cart = ({ product, setCartItem }) => {
     const handleDelete =()=>{
         setCartItem((prevItems) => prevItems.filter((item) => item.title !== product.title));
         setTotalItems(totalItems -1 )
+        
     }
 
     return (

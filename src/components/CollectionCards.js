@@ -20,6 +20,7 @@ const CollectionCards = () => {
   
 
   return (
+    <div className='flex justify-center'>
     <div className='grid grid-cols-5 gap-4 mt-10 '>
       {products.map((product) => (
         <ItemCard
@@ -29,6 +30,8 @@ const CollectionCards = () => {
           description={product.description}
         />
       ))}
+    </div>
+
     </div>
   );
 };
