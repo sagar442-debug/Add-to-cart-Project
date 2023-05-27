@@ -22,8 +22,8 @@ function ItemCard(props) {
         <Card.Text className=''>
         {props.description.length>10 ? props.description.slice(0,50) : props.description }
         </Card.Text>
-        <h5>${props.brand}</h5>
-        <Button variant="primary" onClick={handleCart}>Add To Cart</Button>
+        
+        <Button variant="dark" onClick={handleCart}>Add To Cart</Button>
       </Card.Body>
     </Card>
   );

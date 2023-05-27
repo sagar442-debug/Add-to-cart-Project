@@ -20,11 +20,14 @@ function Header() {
     
     return (
         <>
-            <nav className='bg-cyan-950 flex items-center justify-between px-4 py-3 ' >
-                <div className='flex space-x-5 items-center text-white '>
-                    <Link className='no-underline text-white text-4xl' to="/">Shopping</Link>
-                    <Link className='no-underline text-white text-xl ' to="/about">About</Link>
-                    {/* <Link className='no-underline text-white text-xl ' to="/cart">Cart</Link> */}
+            <nav className='bg-[#2c2424] flex items-center justify-between px-20 py-5 ' >
+                <div className='flex items-center text-white '>
+                    <Link className='no-underline text-white text-3xl font-semibold border-r-2 px-6 border-zinc-500' to="/">Shoppers Mart</Link>
+                    <div className="mx-20 space-x-10">
+                    <Link className='no-underline text-white text-base hover:border-b-2 hover:border-white ' to="/about">About</Link>
+                    <Link className='no-underline text-white text-base hover:border-b-2 hover:border-white ' to="/cart">Cart</Link>
+
+                    </div>
                 </div>
                 <div className=' space-x-5 flex items-center'>
                     <Link to="/user"><FontAwesomeIcon icon={faUser} className='text-white' /></Link>
