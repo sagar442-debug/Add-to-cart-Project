@@ -10,6 +10,7 @@ function ItemCard(props) {
     setClickedProduct(prevArray => [...prevArray,props])
     setCartIndex("none")
     setTotalItems(totalItems + 1)
+    setEmpty(false)
   }
 
 

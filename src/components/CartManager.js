@@ -1,18 +1,21 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import AppContext from '../context/AppContext';
 import Cart from './Cart';
 
 const CartManager = () => {
   const { clickedProduct, setClickedProduct, empty } = useContext(AppContext);
 
+
   return (
     <div className='mt-10'>
       
       {empty=== true? (<h1 className='text-center'>Please add Items to the cart to display</h1>):""}
+
+      
       {clickedProduct === false
-        ? console.log("True")
+        ? ""
         : clickedProduct.map((product) => (
-            <Cart key={product.id} product={product} />
+            <Cart key={product.id} product={product} setCartItem={setClickedProduct}/>
           ))}
     </div>
   );

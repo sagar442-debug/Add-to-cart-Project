@@ -2,15 +2,21 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser } from '@fortawesome/free-solid-svg-icons'
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import AppContext from '../context/AppContext';
 
 
 function Header() {
     
-    const {totalItems, setTotalItems, cartIndex} = useContext(AppContext)
+    const {totalItems, setTotalItems, cartIndex, setCartIndex} = useContext(AppContext)
     
-    
+    useEffect(() => {
+        if (totalItems === 0) {
+          setCartIndex('invisible');
+        } else {
+          setCartIndex('');
+        }
+      }, [totalItems, setCartIndex]);
     
     return (
         <>
