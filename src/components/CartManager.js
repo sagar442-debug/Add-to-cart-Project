@@ -14,8 +14,8 @@ const CartManager = () => {
       
       {clickedProduct === false
         ? ""
-        : clickedProduct.map((product) => (
-            <Cart key={product.title} product={product} setCartItem={setClickedProduct}/>
+        : clickedProduct.map((product,index) => (
+            <Cart key={index} product={product} index={index} setCartItem={setClickedProduct}/>
           ))}
     </div>
   );

@@ -21,10 +21,10 @@ const CollectionCards = () => {
 
   return (
     <div className='flex justify-center'>
-    <div className='grid grid-cols-5 gap-4 mt-10 '>
-      {products.map((product) => (
+    <div className='grid grid-cols-5 gap-4 mt-10 cursor-pointer '>
+      {products.map((product, index) => (
         <ItemCard
-          key={product.id}
+          key={index}
           image={product.thumbnail}
           title={product.title}
           description={product.description}
