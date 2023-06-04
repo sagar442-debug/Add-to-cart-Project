@@ -9,6 +9,8 @@ import AppContext from './context/AppContext';
 import { useState } from 'react';
 import CartManager from './components/CartManager';
 import Footer from './components/Footer';
+import UserDetails from './components/UserDetails';
+import PrivateRoute from './PrivateRoute';
 function App() {
   const [clickedProduct, setClickedProduct] = useState([]);
   const [totalItems, setTotalItems] = useState(0);
@@ -36,6 +38,10 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/cart" element={<CartManager />} />
             <Route path="/user" element={<User />} />
+            <Route path="/userDetails" element={<PrivateRoute>
+              <UserDetails/>
+
+            </PrivateRoute>} />
           </Routes>
         <Footer />
         </AppContext.Provider>

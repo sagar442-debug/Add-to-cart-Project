@@ -24,11 +24,11 @@ const CollectionCards = () => {
 
 
   return (
-    <div className=''>
-      {loading === true ? ( <div className='flex justify-center mt-10'><img src={Spinner}/></div>  ) : ''}
+    <div className='min-h-[80vh]'>
+      {loading === true ? ( <div className='flex justify-center mt-10'><img alt='Loading' src={Spinner}/></div>  ) : ''}
 
       <div className='flex justify-center'>
-        <div className='grid grid-cols-5 gap-4 mt-10 cursor-pointer '>
+        <div className='grid grid-cols-5 gap-4 mt-10 '>
 
 
           {products.map((product, index) => (

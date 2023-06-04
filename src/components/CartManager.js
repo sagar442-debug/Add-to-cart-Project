@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import AppContext from '../context/AppContext';
 import Cart from './Cart';
 
@@ -7,7 +7,7 @@ const CartManager = () => {
 
 
   return (
-    <div className='mt-10'>
+    <div className='mt-10 min-h-[80vh]'>
       
       {empty=== true? (<h1 className='text-center min-h-[90vh]'>Please add Items to the cart to display</h1>):""}
 
