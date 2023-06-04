@@ -9,7 +9,7 @@ const CartManager = () => {
   return (
     <div className='mt-10'>
       
-      {empty=== true? (<h1 className='text-center'>Please add Items to the cart to display</h1>):""}
+      {empty=== true? (<h1 className='text-center min-h-[90vh]'>Please add Items to the cart to display</h1>):""}
 
       
       {clickedProduct === false

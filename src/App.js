@@ -8,6 +8,7 @@ import User from './components/User';
 import AppContext from './context/AppContext';
 import { useState } from 'react';
 import CartManager from './components/CartManager';
+import Footer from './components/Footer';
 function App() {
   const [clickedProduct, setClickedProduct] = useState([]);
   const [totalItems, setTotalItems] = useState(0);
@@ -22,24 +23,23 @@ function App() {
     setTotalItems,
     cartIndex,
     setCartIndex,
-    empty, 
+    empty,
     setEmpty
   }
   return (
 
     <BrowserRouter>
-
-      <AppContext.Provider value={contextValue} >
-      <Header />
-        <Routes>
-          <Route path="/" element={<CollectionCards />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/cart" element={<CartManager />} />
-          <Route path="/user" element={<User />} />
-        </Routes>
-
-      </AppContext.Provider> 
-
+        <AppContext.Provider value={contextValue} >
+          <Header />
+          <Routes>
+            <Route path="/" element={<CollectionCards />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/cart" element={<CartManager />} />
+            <Route path="/user" element={<User />} />
+          </Routes>
+        <Footer />
+        </AppContext.Provider>
+      
     </BrowserRouter>
 
 

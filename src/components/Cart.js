@@ -27,7 +27,7 @@ const Cart = ({ product, setCartItem,index}) => {
 
 
             {product === null ? "" : (
-                <div className='flex items-center justify-center mt-2'>
+                <div className='flex items-center justify-center mt-2 '>
                     <div className='flex  items-center justify-between border border-black p-6 w-[65rem]'>
                         <div className="separate flex space-x-3 items-center">
                             <img className='h-24 w-40' src={product.image} alt={product.title} />
