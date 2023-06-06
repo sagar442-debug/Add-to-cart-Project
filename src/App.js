@@ -11,11 +11,19 @@ import CartManager from './components/CartManager';
 import Footer from './components/Footer';
 import UserDetails from './components/UserDetails';
 import PrivateRoute from './PrivateRoute';
+import ProductPage from './components/ProductPage';
+
+
+
+
+
+
 function App() {
   const [clickedProduct, setClickedProduct] = useState([]);
   const [totalItems, setTotalItems] = useState(0);
   const [cartIndex, setCartIndex] = useState("invisible")
   const [empty, setEmpty] = useState(true)
+  const [products, setProducts] = useState([]);
 
 
   const contextValue = {
@@ -26,7 +34,9 @@ function App() {
     cartIndex,
     setCartIndex,
     empty,
-    setEmpty
+    setEmpty,
+    products,
+    setProducts
   }
   return (
 
@@ -38,10 +48,12 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/cart" element={<CartManager />} />
             <Route path="/user" element={<User />} />
+            <Route path="/product/:title" element={<ProductPage />} />
             <Route path="/userDetails" element={<PrivateRoute>
               <UserDetails/>
 
             </PrivateRoute>} />
+
           </Routes>
         <Footer />
         </AppContext.Provider>

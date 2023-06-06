@@ -1,10 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 import ItemCard from './ItemCard';
 import Spinner from '../Spinner.gif'
+import { ToastContainer } from 'react-toastify';
+import AppContext from '../context/AppContext';
 
 const CollectionCards = () => {
-  const [products, setProducts] = useState([]);
+  const {products, setProducts} = useContext(AppContext)
+  
   const [loading, setLoading] = useState(true)
 
 
@@ -26,6 +29,7 @@ const CollectionCards = () => {
   return (
     <div className='min-h-[80vh]'>
       {loading === true ? ( <div className='flex justify-center mt-10'><img alt='Loading' src={Spinner}/></div>  ) : ''}
+      <ToastContainer/>
 
       <div className='flex justify-center'>
         <div className='grid grid-cols-5 gap-4 mt-10 '>
