@@ -6,6 +6,8 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Link, useParams } from 'react-router-dom';
 
+
+
 function ItemCard(props) {
   const { setClickedProduct, clickedProduct, totalItems, setTotalItems, setCartIndex, setEmpty, notify} = useContext(AppContext);
 
@@ -16,12 +18,13 @@ function ItemCard(props) {
     if(findItem){
       toast.warn("Item Already Added to the cart",{
         autoClose: 2000,
+        position: "bottom-left",
       })
-      console.log("How many times")
     }
     else{
       toast.success("Item added to the cart",{
         autoClose: 2000,
+        position: "bottom-left",
       })
       setClickedProduct(prevArray => [...prevArray,props])
       setCartIndex("none")
@@ -33,7 +36,6 @@ function ItemCard(props) {
   }
 
   const handleClick=()=>{
-    console.log(props)
     localStorage.setItem('Product', JSON.stringify(props))
 
   }

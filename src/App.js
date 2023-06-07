@@ -24,6 +24,9 @@ function App() {
   const [cartIndex, setCartIndex] = useState("invisible")
   const [empty, setEmpty] = useState(true)
   const [products, setProducts] = useState([]);
+  const handleCart=()=>{
+
+  }
 
 
   const contextValue = {
@@ -36,7 +39,8 @@ function App() {
     empty,
     setEmpty,
     products,
-    setProducts
+    setProducts,
+    handleCart
   }
   return (
 
