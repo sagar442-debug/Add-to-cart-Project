@@ -12,6 +12,7 @@ function ItemCard(props) {
   const handleCart=()=>{
 
     const findItem = clickedProduct.find((cart)=> cart.title === props.title)
+
     if(findItem){
       toast.warn("Item Already Added to the cart",{
         autoClose: 2000,
@@ -31,6 +32,12 @@ function ItemCard(props) {
 
   }
 
+  const handleClick=()=>{
+    console.log(props)
+    localStorage.setItem('Product', JSON.stringify(props))
+
+  }
+
   
  
 
@@ -41,7 +48,7 @@ function ItemCard(props) {
 
     <Card  className=' w-80 p-10 cursor-pointer'>
       <Link to={`/product/${props.title}`}>
-      <Card.Img variant="top" className='h-36 w-40' src={props.image} />
+      <Card.Img onClick={handleClick} variant="top" className='h-36 w-40' src={props.image} />
       </Link>
       <Card.Body>
         <Card.Title>{props.title > 10 ? props.title.slice(0,10):props.title}</Card.Title>

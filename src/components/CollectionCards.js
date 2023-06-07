@@ -8,15 +8,17 @@ import AppContext from '../context/AppContext';
 const CollectionCards = () => {
   const {products, setProducts} = useContext(AppContext)
   
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState()
 
 
   useEffect(() => {
     axios
       .get('https://dummyjson.com/products')
       .then((success) => {
+        setLoading(true)
         setProducts(success.data.products);
         setLoading(false)
+
       })
       .catch((error) => {
         console.log(error);

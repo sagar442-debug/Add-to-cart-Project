@@ -4,24 +4,23 @@ import AppContext from '../context/AppContext';
 
 const ProductPage = () => {
     let {title} = useParams();
-    let {products} = useContext(AppContext)
-    
-    console.log(products)
-
-
-    const product = products.find((product)=> product.title===title)
-
-    localStorage.setItem('Product', JSON.stringify(product))
+    console.log(title)
 
     const finalProduct = JSON.parse(localStorage.getItem('Product'))
 
-    console.log(finalProduct)
+    
 
 
   return (
-    <div className='min-h-[80vh] text-center'>
+    <div className='min-h-[80vh] container mt-10'>
       <h1>{finalProduct.title}</h1>
-      <img  alt="" />
+      <div className="flex">
+      <img src={finalProduct.image} alt="" />
+      <div className='mx-10 space-y-5 '>
+      <h3 className='font-normal'>{finalProduct.description}</h3>
+      <button className=' p-2 rounded bg-blue-600 text-white hover:bg-blue-500'>Add to cart</button>
+      </div>
+      </div>
     </div>
   )
 }
